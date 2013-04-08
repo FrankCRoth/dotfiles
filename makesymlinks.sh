@@ -9,7 +9,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="_bashrc _vimrc _vim _zshrc"    # list of files/folders to symlink in homedir
+files=`ls | grep _`
 
 ##########
 
@@ -26,8 +26,9 @@ echo "...done"
 # move any existing dotfiles in homedir to dotfiles_old directory, then create
 # symlinks
 for file in $files; do
+	dotfile=`echo $file | sed s/_/./`
         echo "Moving any existing dotfiles from ~ to $olddir"
-        mv ~/.$file ~/dotfiles_old/
-        echo "Creating symlink to $file in home directory."
-        ln -s $dir/$file ~/.$file
+        mv ~/$dotfile ~/dotfiles_old/
+        echo "Creating symlink from $file to $dotfile in home directory."
+        ln -s $dir/$file ~/$dotfile
 done
