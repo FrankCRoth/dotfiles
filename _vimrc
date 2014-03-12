@@ -97,13 +97,13 @@ call pathogen#infect()
 
 " Settings for vim-powerLine
 " cd ~/.vim/bundle
-" git clone git://github.com/Lokaltog/powerline.git
+" git clone https://github.com/Lokaltog/powerline.git
 " source ~/.vim/bundle/powerline/powerline/ext/vim/source_plugin.vim
 set laststatus=2
 
 " Settins for ctrlp
 " cd ~./vim/bundle
-" git clone git://github.com/kien/ctrlp.vim.git
+" git clone https://github.com/kien/ctrlp.vim.git
 let g:ctrlp_max_height=30
 set wildignore+=*.pyc
 set wildignore+=*_build/*
@@ -113,6 +113,7 @@ set wildignore+=*/coverage/*
 " cd ~/.vim/bundle
 " git clone https://github.com/klen/python-mode
 map <Leader>g :call RopeGotoDefinition()<CR>
+set nofoldenable
 let ropevim_enable_shortcuts = 1
 let g:pymode_rope_goto_def_newwin = "vnew"
 let g:pymode_rope_extended_complete = 1
